@@ -1,5 +1,17 @@
 body {
   font-family: 'Barlow';
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease;
+  &:hover {
+    color: #0c40fc;
+  }
 }
 
 @import '../assets/fonts/fonts.css';
