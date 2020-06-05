@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Regular';
   font-weight: normal;
+  font-style: normal;
   src: url('./Regular-RegularWEB.woff') format('woff'),
     url('./Regular-RegularWEB.woff2') format('woff2'),
     url('./Regular-Regular.otf') format('otf');
@@ -8,15 +9,8 @@
 
 @font-face {
   font-family: 'Regular';
-  font-weight: bold;
-  src: url('./Regular-BoldWEB.woff') format('woff'),
-    url('./Regular-BoldWEB.woff2') format('woff2'),
-    url('./Regular-Bold.otf') format('otf');
-}
-
-@font-face {
-  font-family: 'Regular';
   font-style: italic;
+  font-style: normal;
   src: url('./Regular-RegularItalicWEB.woff') format('woff'),
     url('./Regular-RegularItalicWEB.woff2') format('woff2'),
     url('./Regular-RegularItalic.otf') format('otf');
@@ -25,46 +19,17 @@
 @font-face {
   font-family: 'Regular';
   font-weight: 600;
+  font-style: normal;
   src: url('./Regular-SemiboldWEB.woff') format('woff'),
     url('./Regular-SemiboldWEB.woff2') format('woff2'),
     url('./Regular-Semibold.otf') format('otf');
 }
 
 @font-face {
-  font-family: 'Barlow';
+  font-family: 'Regular';
+  font-weight: bold;
   font-style: normal;
-  font-weight: 100;
-  src: url('./Barlow-Thin.ttf') format('woff2');
-}
-
-@font-face {
-  font-family: 'Barlow';
-  font-style: normal;
-  font-weight: 300;
-  src: url('./Barlow-Light.ttf') format('woff2');
-}
-
-@font-face {
-  font-family: 'Barlow';
-  font-weight: 400;
-  src: url('./Barlow-Regular.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Barlow';
-  font-style: normal;
-  font-weight: 500;
-  src: url('./Barlow-Medium.ttf') format('woff2');
-}
-
-@font-face {
-  font-family: 'Barlow';
-  font-weight: 600;
-  src: url('./Barlow-SemiBold.ttf') format('ttf');
-}
-
-@font-face {
-  font-family: 'Barlow';
-  font-weight: 700;
-  src: url('./Barlow-Bold.ttf') format('ttf');
+  src: url('./Regular-BoldWEB.woff') format('woff'),
+    url('./Regular-BoldWEB.woff2') format('woff2'),
+    url('./Regular-Bold.otf') format('otf');
 }
