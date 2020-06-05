@@ -82,13 +82,15 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('md')]: {
       display: 'none',
     },
+    minHeight: '64px',
   },
   mobileToolBar: {
     [theme.breakpoints.up('lg')]: {
       display: 'none',
     },
     paddingRight: 0,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    minHeight: '56px',
   },
   closeMenuButton: {
     marginLeft: 'auto',
@@ -260,7 +262,7 @@ export const Header = () => {
   return (
     <div className={classes.root}>
       <AppBar position="static" color="transparent" className={classes.appBar}>
-        <Container style={{padding: 0, margin: 0}}>
+        <Container style={{ padding: 0 }}>
           <Toolbar className={classes.desktopToolBar}>
             <img src={logoWithText} alt="" />
             <Box className={classes.navLinkGroup} style={{padding: 0}}>

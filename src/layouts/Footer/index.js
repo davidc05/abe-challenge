@@ -20,8 +20,15 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(3),
   },
   footerNavigation: {
-    paddingLeft: '12px',
-    paddingRight: '12px',
+    paddingRight: theme.spacing(3),
+    fontSize: '13px',
+  },
+  copyRight: {
+    fontFamily: 'Barlow',
+    fontSize: '12px',
+    color: '#88979E',
+    padding: 0,
+    margin: 0,
   }
 }));
 
@@ -34,19 +41,21 @@ export const Footer = () => {
         <Container>
           <Toolbar>
             <Grid container alignItems="center">
-              <Grid item sm={1} alignItems="center">
-                <img className={classes.instagram} src={instagramIcon} alt="" />
-                <img src={twitterIcon} alt="" />
+              <Grid container item sm={12} md={12} lg={5} xl={5}>
+                <Grid item xs={12} sm={12} md={12} lg={2} xl={2} alignItems="center" style={{paddingTop: '12px', paddingBottom: '12px'}}>
+                  <img className={classes.instagram} src={instagramIcon} alt="" />
+                  <img src={twitterIcon} alt="" />
+                </Grid>
+                <Grid item item xs={12} sm={12} md={12} lg={10} xl={10} style={{paddingTop: '12px', paddingBottom: '12px'}}>
+                  <NavLink className={classes.footerNavigation} to="/about-us">About Us</NavLink>
+                  <NavLink className={classes.footerNavigation} to="/how-works">How abe works</NavLink>
+                  <NavLink className={classes.footerNavigation} to="/privacy">Privacy Policy</NavLink>
+                  <NavLink className={classes.footerNavigation} to="/terms">Terms of Service</NavLink>
+                </Grid>
               </Grid>
-              <Grid item sm={5}>
-                <NavLink className={classes.footerNavigation} to="/about-us">About Us</NavLink>
-                <NavLink className={classes.footerNavigation} to="/how-works">How abe works</NavLink>
-                <NavLink className={classes.footerNavigation} to="/privacy">Privacy Policy</NavLink>
-                <NavLink className={classes.footerNavigation} to="/terms">Terms of Service</NavLink>
-              </Grid>
-              <Grid item sm={6}>
-                <p> © 2020 PopOdds inc. Reserved. </p>
-                <p> If you or someone you know has a gambling problem and wants help, call 1-800-Gambler. You must be 21 years or older to place a bet. </p>
+              <Grid item item xs={12} sm={12} md={12} lg={7} xl={7} style={{paddingTop: '12px', paddingBottom: '12px'}}>
+                <p className={classes.copyRight}> © 2020 PopOdds inc. Reserved. </p>
+                <p className={classes.copyRight}> If you or someone you know has a gambling problem and wants help, call 1-800-Gambler. You must be 21 years or older to place a bet. </p>
               </Grid>
             </Grid>
           </Toolbar>
