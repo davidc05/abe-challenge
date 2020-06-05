@@ -10,8 +10,6 @@ import ListItem from '@material-ui/core/ListItem';
 import Grid from '@material-ui/core/Grid';
 import ListItemText from '@material-ui/core/ListItemText';
 import Box from '@material-ui/core/Box';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 
@@ -236,18 +234,6 @@ export default function TemporaryDrawer() {
         anchor="top"
         open={state['betting101']}
         onClose={toggleDrawer('betting101', false)}
-        PaperProps={{
-          style: {
-            top: 100,
-          },
-        }}
-        ModalProps={{
-          style: {
-            // '& .MuiBackdrop-root': {
-            //   top: 100,
-            // },
-          },
-        }}
       >
         {betting101List()}
       </Drawer>
@@ -255,18 +241,6 @@ export default function TemporaryDrawer() {
         anchor="top"
         open={state['advanced']}
         onClose={toggleDrawer('advanced', false)}
-        PaperProps={{
-          style: {
-            top: 100,
-          },
-        }}
-        ModalProps={{
-          style: {
-            // '& .MuiBackdrop-root': {
-            //   top: 100,
-            // },
-          },
-        }}
       >
         {advancedList()}
       </Drawer>
