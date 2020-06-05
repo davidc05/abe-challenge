@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme) => ({
   instagram: {
     marginRight: theme.spacing(3),
   },
+  footerNavigation: {
+    paddingLeft: '12px',
+    paddingRight: '12px',
+  }
 }));
 
 export const Footer = () => {
@@ -34,16 +38,15 @@ export const Footer = () => {
                 <img className={classes.instagram} src={instagramIcon} alt="" />
                 <img src={twitterIcon} alt="" />
               </Grid>
-              <Grid item sm={4}>
-                <NavLink to="/about-us">About Us</NavLink>
-                <NavLink to="/how-works">How abe works</NavLink>
-                <NavLink to="/privacy">Privacy Policy</NavLink>
-                <NavLink to="/terms">Terms of Service</NavLink>
+              <Grid item sm={5}>
+                <NavLink className={classes.footerNavigation} to="/about-us">About Us</NavLink>
+                <NavLink className={classes.footerNavigation} to="/how-works">How abe works</NavLink>
+                <NavLink className={classes.footerNavigation} to="/privacy">Privacy Policy</NavLink>
+                <NavLink className={classes.footerNavigation} to="/terms">Terms of Service</NavLink>
               </Grid>
-              <Grid item sm={7}>
-                © 2020 PopOdds inc. Reserved. If you or someone you know has a
-                gambling problem and wants help, call 1-800-Gambler. You must be
-                21 years or older to place a bet.
+              <Grid item sm={6}>
+                <p> © 2020 PopOdds inc. Reserved. </p>
+                <p> If you or someone you know has a gambling problem and wants help, call 1-800-Gambler. You must be 21 years or older to place a bet. </p>
               </Grid>
             </Grid>
           </Toolbar>

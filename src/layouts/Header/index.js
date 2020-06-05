@@ -49,29 +49,43 @@ const useStyles = makeStyles((theme) => ({
       letterSpacing: '0.02em',
       marginRight: theme.spacing(2),
       marginLeft: theme.spacing(2),
+      lineHeight: '48px',
+      textDecoration: 'none',
+      position: 'relative',
+      paddingTop: '18px',
+
+      '&.active' :{
+        content: '',
+        borderWidth: '0 0 2px',
+        borderStyle: 'solid',
+        borderColor: '#0C40FC',
+        color: '#0C40FC',
+      }
     },
+    display: 'flex',
+    marginLeft: '40px',
   },
   loginBtn: {
     marginRight: theme.spacing(1),
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
+    marginTop: '18px',
   },
 
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
   },
   desktopToolBar: {
-    marginRight: theme.spacing(2),
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('md')]: {
       display: 'none',
     },
   },
   mobileToolBar: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('lg')]: {
       display: 'none',
     },
     paddingRight: 0,
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   },
   menuButton: {
     marginLeft: 'auto',
@@ -125,6 +139,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#0C40FC',
   },
   location: {
+    paddingTop: '18px',
     '& img': {
       paddingRight: 8,
     },
@@ -247,11 +262,11 @@ export const Header = () => {
   return (
     <div className={classes.root}>
       <AppBar position="static" color="transparent" className={classes.appBar}>
-        <Container>
+        <Container style={{padding: 0, margin: 0}}>
           <Toolbar className={classes.desktopToolBar}>
             <img src={logoWithText} alt="" />
-            <Box className={classes.navLinkGroup}>
-              <NavLink activeClassName="active" to="/odds">
+            <Box className={classes.navLinkGroup} style={{padding: 0}}>
+              <NavLink activeClassName="active"  activeStyle={{color: 'red'}} to="/odds">
                 Odds
               </NavLink>
               <NavLink activeClassName="active" to="/futures">
@@ -277,16 +292,16 @@ export const Header = () => {
               <img src={Marker} alt="" />
               New Jersey
             </span>
-            <Button className={classes.loginBtn} color="inherit">
+            <Button className={classes.loginBtn} color="primary">
               Log In
             </Button>
-            <Button variant="contained" color="primary">
+            <Button variant="contained" color="primary" style={{marginTop: "18px"}}>
               Sign Up
             </Button>
           </Toolbar>
 
           <Toolbar className={classes.mobileToolBar}>
-            <img src={logoWithText} alt="" />
+            <img src={logoWithText} alt="" style={{width: '71px', height: '32px' }} />
             <IconButton
               color="inherit"
               aria-label="Open drawer"
