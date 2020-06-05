@@ -152,6 +152,9 @@ const useStyles = makeStyles((theme) => ({
     },
     fontFamily: 'Regular',
     fontWeight: 600,
+    fontSize: 14,
+    display: 'flex',
+    alignItems: 'center',
     marginLeft: 'auto',
     marginRight: theme.spacing(1),
     paddingLeft: theme.spacing(2),
@@ -607,7 +610,7 @@ export const Header = () => {
               <ListItem>
                 <MainMenuListItemText
                   primary={
-                    <span>
+                    <span style={{ display: 'flex', alignItems: 'center' }}>
                       <img src={Marker} alt="" />
                       New Jersey
                     </span>
@@ -621,6 +624,11 @@ export const Header = () => {
                       variant="contained"
                       className={classes.mobileSignupButton}
                       color="primary"
+                      style={{
+                        fontFamily: 'Regular',
+                        fontWeight: 'bold',
+                        fontSize: 16,
+                      }}
                     >
                       Sign Up
                     </Button>
@@ -633,6 +641,11 @@ export const Header = () => {
                     <Button
                       className={classes.mobileLoginButton}
                       color="inherit"
+                      style={{
+                        fontFamily: 'Regular',
+                        fontWeight: 'bold',
+                        fontSize: 16,
+                      }}
                     >
                       Log In
                     </Button>
