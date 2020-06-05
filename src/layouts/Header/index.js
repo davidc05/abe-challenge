@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    marginLeft: 'auto',
+    paddingLeft: theme.spacing(2),
+    color: '#CED7DB',
   },
   title: {
     flexGrow: 1,
@@ -72,11 +75,6 @@ const useStyles = makeStyles((theme) => ({
     },
     paddingRight: 0,
     justifyContent: 'space-between',
-  },
-  menuButton: {
-    marginLeft: 'auto',
-    paddingLeft: theme.spacing(2),
-    color: '#CED7DB',
   },
   closeMenuButton: {
     marginLeft: 'auto',

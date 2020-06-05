@@ -1,13 +1,12 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
-import data from './data';
+import Hidden from '@material-ui/core/Hidden';
 
+import data from './data';
 import TopDealRow from './TopDealRow';
+import Slider from './Slider';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,15 +14,27 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 4,
     maxWidth: 344,
     marginLeft: 'auto',
+    [theme.breakpoints.down('md')]: {
+      maxWidth: '100%',
+      border: 'none',
+      paddingBottom: theme.spacing(5),
+    },
   },
   content: {
     paddingTop: theme.spacing(3),
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
     paddingBottom: theme.spacing(1),
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: 0,
+      paddingRight: 0,
+    },
   },
   title: {
     marginBottom: theme.spacing(2),
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: theme.spacing(3),
+    },
   },
 }));
 
@@ -33,14 +44,28 @@ export default () => {
   return (
     <div className={classes.root}>
       <div className={classes.content}>
-        <Typography variant="h3" className={classes.title}>
-          Top Deals Today
-        </Typography>
-        <Grid container>
-          {data.map((item, idx) => (
-            <TopDealRow key={idx} last={idx === data.length - 1} {...item} />
-          ))}
-        </Grid>
+        <Hidden mdDown>
+          <Typography variant="h3" className={classes.title}>
+            Top Deals Today
+          </Typography>
+        </Hidden>
+        <Hidden mdUp>
+          <Typography variant="h2" className={classes.title}>
+            Top Deals
+            <br />
+            in [New Jersey]
+          </Typography>
+        </Hidden>
+        <Hidden mdDown>
+          <Grid container>
+            {data.map((item, idx) => (
+              <TopDealRow key={idx} last={idx === data.length - 1} {...item} />
+            ))}
+          </Grid>
+        </Hidden>
+        <Hidden mdUp>
+          <Slider />
+        </Hidden>
       </div>
     </div>
   );

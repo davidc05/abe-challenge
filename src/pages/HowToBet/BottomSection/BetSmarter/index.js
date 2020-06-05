@@ -14,6 +14,11 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 4,
     maxWidth: 344,
     marginLeft: 'auto',
+    [theme.breakpoints.down('md')]: {
+      backgroundColor: '#F9FAFA',
+      maxWidth: '100%',
+      border: 'none',
+    },
   },
   title: {
     marginBottom: theme.spacing(1),
@@ -25,10 +30,12 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(3),
     paddingBottom: theme.spacing(3),
     paddingLeft: theme.spacing(3),
+    justifyContent: 'center',
+    display: 'flex',
+    flexDirection: 'column',
   },
   input: {
     marginBottom: theme.spacing(5),
-    // borderBottom: '2px solid #0C40FC',
     '& input': {
       paddingBottom: theme.spacing(2),
       opacity: 0.9,
@@ -50,7 +57,7 @@ export default () => {
 
   return (
     <div className={classes.root}>
-      <Grid container>
+      <Grid container className={classes.gridContainer}>
         <Grid item sm={8} className={classes.inputArea}>
           <div className={classes.title}>
             <Typography variant="h3" color="primary">
@@ -68,9 +75,11 @@ export default () => {
             className={classes.input}
             placeholder="your-email@email.com"
           />
-          <Button variant="contained" color="primary" size="large">
-            Sign Up
-          </Button>
+          <Box>
+            <Button variant="contained" color="primary" size="large">
+              Sign Up
+            </Button>
+          </Box>
         </Grid>
         <Grid item sm={4} className={classes.image}>
           <img src={signupCard} alt="" />
