@@ -10,6 +10,7 @@ import Sidebar from './Sidebar';
 import ArticleWrapper from './ArticleWrapper';
 
 import getArticle from './Articles/articles';
+import BottomSection from './BottomSection';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,6 +28,11 @@ const useStyles = makeStyles((theme) => ({
   description: {
     maxWidth: 544,
   },
+  bottomSection: {
+    backgroundColor: 'white',
+    paddingTop: theme.spacing(6),
+    paddingBottom: theme.spacing(6),
+  },
 }));
 
 export default () => {
@@ -36,33 +42,38 @@ export default () => {
   const article = getArticle({ introSlug, blogSlug });
 
   return (
-    <div className={classes.root}>
-      <Box className={classes.pageTitle}>
-        <Container>
-          <Typography variant="h1" gutterBottom>
-            How to bet
-          </Typography>
-          <Typography
-            className={classes.description}
-            variant="subtitle1"
-            gutterBottom
-          >
-            This is the place to learn how to bet, become a more effective
-            bettor, or learn if sports betting is legal in your state. Check out
-            our helpful sports betting tutorials and bet smarter today.
-          </Typography>
+    <>
+      <div className={classes.root}>
+        <Box className={classes.pageTitle}>
+          <Container>
+            <Typography variant="h1" gutterBottom>
+              How to bet
+            </Typography>
+            <Typography
+              className={classes.description}
+              variant="subtitle1"
+              gutterBottom
+            >
+              This is the place to learn how to bet, become a more effective
+              bettor, or learn if sports betting is legal in your state. Check
+              out our helpful sports betting tutorials and bet smarter today.
+            </Typography>
+          </Container>
+        </Box>
+        <Container className={classes.container}>
+          <Grid container>
+            <Grid item sm={8}>
+              <ArticleWrapper {...article} />
+            </Grid>
+            <Grid item sm={4}>
+              <Sidebar />
+            </Grid>
+          </Grid>
         </Container>
-      </Box>
-      <Container className={classes.container}>
-        <Grid container>
-          <Grid item sm={8}>
-            <ArticleWrapper {...article} />
-          </Grid>
-          <Grid item sm={4}>
-            <Sidebar />
-          </Grid>
-        </Grid>
+      </div>
+      <Container className={classes.bottomSection}>
+        <BottomSection />
       </Container>
-    </div>
+    </>
   );
 };

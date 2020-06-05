@@ -7,14 +7,14 @@
     url('./Regular-Regular.otf') format('otf');
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Regular';
   font-style: italic;
   font-style: normal;
   src: url('./Regular-RegularItalicWEB.woff') format('woff'),
     url('./Regular-RegularItalicWEB.woff2') format('woff2'),
     url('./Regular-RegularItalic.otf') format('otf');
-}
+} */
 
 @font-face {
   font-family: 'Regular';
