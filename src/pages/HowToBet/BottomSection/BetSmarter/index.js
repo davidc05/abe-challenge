@@ -71,7 +71,6 @@ export default () => {
           </Typography>
           <TextField
             fullWidth
-            autoFocus
             className={classes.input}
             placeholder="your-email@email.com"
           />
