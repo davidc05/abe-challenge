@@ -308,13 +308,31 @@ export const Header = () => {
               <img src={Marker} alt="" />
               New Jersey
             </span>
-            <Button className={classes.loginBtn} color="primary">
+            <Button
+              className={classes.loginBtn}
+              color="primary"
+              style={{
+                height: 40,
+                fontSize: 16,
+                fontWeight: 'bold',
+                fontFamily: 'Regular',
+                letterSpacing: '0.02em',
+              }}
+            >
               Log In
             </Button>
             <Button
               variant="contained"
               color="primary"
-              style={{ marginTop: '18px' }}
+              style={{
+                marginTop: '18px',
+                height: 40,
+                width: 88,
+                fontSize: 16,
+                fontWeight: 'bold',
+                fontFamily: 'Regular',
+                letterSpacing: '0.02em',
+              }}
             >
               Sign Up
             </Button>

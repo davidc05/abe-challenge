@@ -11,6 +11,13 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(5),
     marginBottom: theme.spacing(5),
     fontFamily: 'Regular',
+    '& button': {
+      width: 82,
+      height: 40,
+      fontSize: 14,
+      fontWeight: 'bold',
+      letterSpacing: '0.02em',
+    },
   },
   content: {
     paddingTop: theme.spacing(4),
