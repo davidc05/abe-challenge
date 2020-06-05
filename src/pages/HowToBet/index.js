@@ -32,6 +32,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'white',
     paddingTop: theme.spacing(6),
     paddingBottom: theme.spacing(6),
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: 0,
+      paddingRight: 0,
+    },
+  },
+  sidebar: {
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
   },
 }));
 
@@ -62,10 +71,10 @@ export default () => {
         </Box>
         <Container className={classes.container}>
           <Grid container>
-            <Grid item sm={8}>
+            <Grid item sm={12} md={8}>
               <ArticleWrapper {...article} />
             </Grid>
-            <Grid item sm={4}>
+            <Grid item sm={12} md={4} className={classes.sidebar}>
               <Sidebar />
             </Grid>
           </Grid>

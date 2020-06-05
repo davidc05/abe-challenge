@@ -1,6 +1,5 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -8,7 +7,6 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid #F2F4F5',
     borderRadius: 4,
     backgroundColor: 'white',
-    // padding: theme.spacing(3),
     width: 154,
     height: 101,
     display: 'flex',
@@ -18,6 +16,13 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(5),
     marginBottom: theme.spacing(5),
     cursor: 'pointer',
+    [theme.breakpoints.down('md')]: {
+      '& &': {
+        marginLeft: 10,
+      },
+      marginRight: 0,
+      marginBottom: theme.spacing(1),
+    },
   },
   grid: {
     height: '100%',
