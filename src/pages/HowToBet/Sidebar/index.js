@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     borderRadius: 4,
     marginLeft: 'auto',
+    position: 'sticky',
+    top: 20,
+    padding: 0,
   },
   nested: {
     paddingLeft: theme.spacing(7),
@@ -38,7 +41,7 @@ const betting101 = [
     label: 'An Exhaustive Guide to Sports Betting Terms',
     slug: 'exhaustive-guide',
   },
-  { label: 'Sports Betting Tips from the Sharps', slug: 'sports-betting' },
+  { label: 'Sports Betting Tips from the Sharps', slug: 'sports-betting-tips' },
   {
     label: 'In-Game Betting: The Thrill of Wagering on Live Sports',
     slug: 'in-game',
@@ -90,6 +93,21 @@ export default function NestedList() {
           secondary="We’ll put you on the path to becoming a successful sports bettor."
           primaryTypographyProps={{
             color: open.betting101 ? 'primary' : 'initial',
+            style: {
+              fontSize: 20,
+              fontWeight: 600,
+              paddingTop: 8,
+              paddingBottom: 8,
+            },
+          }}
+          secondaryTypographyProps={{
+            style: {
+              fontSize: 14,
+              fontWeight: 300,
+              opacity: 0.9,
+              paddingTop: 8,
+              paddingBottom: 8,
+            },
           }}
         />
       </ListItem>
@@ -101,8 +119,23 @@ export default function NestedList() {
               component={NavLink}
               to={`/how-to-bet/betting101/${item.slug}`}
               className={classes.nested}
+              activeStyle={{
+                backgroundColor: '#F4F8FA',
+                '& > span': {
+                  fontWeight: 600,
+                  color: '#0C40FC !important',
+                },
+              }}
             >
-              <ListItemText primary={item.label} />
+              <ListItemText
+                primary={item.label}
+                primaryTypographyProps={{
+                  style: {
+                    paddingTop: 4,
+                    paddingBottom: 4,
+                  },
+                }}
+              />
             </ListItem>
           ))}
         </List>
@@ -125,6 +158,21 @@ export default function NestedList() {
           secondary="Take your sports betting game to the next level with advice from the pros."
           primaryTypographyProps={{
             color: open.advanced ? 'primary' : 'initial',
+            style: {
+              fontSize: 20,
+              fontWeight: 600,
+              paddingTop: 8,
+              paddingBottom: 8,
+            },
+          }}
+          secondaryTypographyProps={{
+            style: {
+              fontSize: 14,
+              fontWeight: 300,
+              opacity: 0.9,
+              paddingTop: 8,
+              paddingBottom: 8,
+            },
           }}
         />
       </ListItem>
@@ -136,8 +184,23 @@ export default function NestedList() {
               component={NavLink}
               to={`/how-to-bet/advanced/${item.slug}`}
               className={classes.nested}
+              activeStyle={{
+                backgroundColor: '#F4F8FA',
+                '& span': {
+                  fontWeight: 600,
+                  color: '#0C40FC',
+                },
+              }}
             >
-              <ListItemText primary={item.label} />
+              <ListItemText
+                primary={item.label}
+                primaryTypographyProps={{
+                  style: {
+                    paddingTop: 4,
+                    paddingBottom: 4,
+                  },
+                }}
+              />
             </ListItem>
           ))}
         </List>

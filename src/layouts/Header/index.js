@@ -71,17 +71,17 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
     paddingRight: 0,
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   menuButton: {
     marginLeft: 'auto',
     paddingLeft: theme.spacing(2),
-    color: "#CED7DB"
+    color: '#CED7DB',
   },
   closeMenuButton: {
     marginLeft: 'auto',
     marginRight: 0,
-    color: "#CED7DB",
+    color: '#CED7DB',
   },
   drawer: {
     [theme.breakpoints.up('sm')]: {
@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    background: "white",
+    background: 'white',
   },
   content: {
     flexGrow: 1,
@@ -134,7 +134,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(1),
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
-  }
+  },
 }));
 
 const ExpansionPanel = withStyles({
@@ -186,9 +186,9 @@ const MainMenuListItemText = withStyles((theme) => ({
     fontWeight: 600,
     '& img': {
       marginRight: 8,
-    }
-  }
-}))(MuiListItemText)
+    },
+  },
+}))(MuiListItemText);
 
 const SubMenuListItemText = withStyles((theme) => ({
   root: {
@@ -200,8 +200,8 @@ const SubMenuListItemText = withStyles((theme) => ({
     fontSize: 16,
     fontFamily: 'Regular',
     lineHeight: '32px',
-  }
-}))(MuiListItemText)
+  },
+}))(MuiListItemText);
 
 const FutureSubMenuListText = withStyles((theme) => ({
   root: {
@@ -215,25 +215,25 @@ const FutureSubMenuListText = withStyles((theme) => ({
     marginBottom: 2,
   },
   secondary: {
-    color: "#000000",
+    color: '#000000',
     fontSize: 16,
     fontFamily: 'Regular',
     fontWeight: 600,
     '& a': {
       marginRight: 30,
     },
-  }
-}))(MuiListItemText)
+  },
+}))(MuiListItemText);
 
 const Divider = withStyles((theme) => ({
   root: {
-    background: "#F9FAFA",
+    background: '#F9FAFA',
     osition: 'static',
     flex: 'none',
     order: 9,
     marginLeft: 16,
     marginRight: 16,
-  }
+  },
 }))(MuiDivider);
 
 export const Header = () => {
@@ -242,7 +242,7 @@ export const Header = () => {
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   function handleDrawerToggle() {
-    setMobileOpen(!mobileOpen)
+    setMobileOpen(!mobileOpen);
   }
   return (
     <div className={classes.root}>
@@ -257,7 +257,7 @@ export const Header = () => {
               <NavLink activeClassName="active" to="/futures">
                 Futures
               </NavLink>
-              <NavLink activeClassName="active" to="/about">
+              <NavLink activeClassName="active" to="/how-to-bet">
                 How To Bet
               </NavLink>
               <NavLink activeClassName="active" to="/legalization">
@@ -297,7 +297,6 @@ export const Header = () => {
               <MenuIcon />
             </IconButton>
           </Toolbar>
-
         </Container>
       </AppBar>
 
@@ -315,8 +314,11 @@ export const Header = () => {
               keepMounted: true, // Better open performance on mobile.
             }}
           >
-            <IconButton onClick={handleDrawerToggle} className={classes.closeMenuButton}>
-              <CloseIcon/>
+            <IconButton
+              onClick={handleDrawerToggle}
+              className={classes.closeMenuButton}
+            >
+              <CloseIcon />
             </IconButton>
             <List>
               <ListItem>
@@ -342,7 +344,7 @@ export const Header = () => {
                   <List>
                     <ListItem>
                       <FutureSubMenuListText
-                        primary="Football" 
+                        primary="Football"
                         secondary={
                           <div>
                             <NavLink activeClassName="active" to="/futures">
@@ -377,7 +379,8 @@ export const Header = () => {
                           <NavLink activeClassName="active" to="/futures">
                             MLB
                           </NavLink>
-                        } />
+                        }
+                      />
                     </ListItem>
                     <ListItem>
                       <FutureSubMenuListText
@@ -421,7 +424,8 @@ export const Header = () => {
                           <NavLink activeClassName="active" to="/futures">
                             UFC
                           </NavLink>
-                        } />
+                        }
+                      />
                     </ListItem>
                   </List>
                 </ExpansionPanelDetails>
@@ -433,13 +437,15 @@ export const Header = () => {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography className={classes.heading}>How To Bet</Typography>
+                  <Typography className={classes.heading}>
+                    How To Bet
+                  </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <List>
                     <ListItem>
-                      <SubMenuListItemText  
-                        className={classes.subMenu} 
+                      <SubMenuListItemText
+                        className={classes.subMenu}
                         primary={
                           <NavLink activeClassName="active" to="/futures">
                             Betting 101
@@ -448,7 +454,7 @@ export const Header = () => {
                       />
                     </ListItem>
                     <ListItem>
-                      <SubMenuListItemText 
+                      <SubMenuListItemText
                         className={classes.subMenu}
                         primary={
                           <NavLink activeClassName="active" to="/futures">
@@ -467,7 +473,9 @@ export const Header = () => {
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
-                  <Typography className={classes.heading}>Legalization</Typography>
+                  <Typography className={classes.heading}>
+                    Legalization
+                  </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
                   <List>
@@ -540,7 +548,7 @@ export const Header = () => {
             </List>
             <List className={classes.bottomSection}>
               <ListItem>
-                <MainMenuListItemText 
+                <MainMenuListItemText
                   primary={
                     <span>
                       <img src={Marker} alt="" />
@@ -552,16 +560,23 @@ export const Header = () => {
               <ListItem>
                 <ListItemText
                   primary={
-                    <Button variant="contained" className={classes.mobileSignupButton} color="primary">
+                    <Button
+                      variant="contained"
+                      className={classes.mobileSignupButton}
+                      color="primary"
+                    >
                       Sign Up
                     </Button>
                   }
                 />
               </ListItem>
               <ListItem>
-                <ListItemText 
+                <ListItemText
                   primary={
-                    <Button className={classes.mobileLoginButton} color="inherit">
+                    <Button
+                      className={classes.mobileLoginButton}
+                      color="inherit"
+                    >
                       Log In
                     </Button>
                   }
@@ -571,7 +586,6 @@ export const Header = () => {
           </Drawer>
         </Hidden>
       </nav>
-
     </div>
   );
 };

@@ -49,11 +49,15 @@ export default createMuiTheme({
         borderRadius: 4,
         boxShadow: 'none',
         minWidth: 'auto',
+        margin: 0,
       },
     },
     MuiListItemIcon: {
       root: {
         minWidth: 40,
+        color: 'rgba(0, 0, 0, 1)',
+        marginBottom: 'auto',
+        marginTop: 18,
       },
     },
     MuiListItemText: {
