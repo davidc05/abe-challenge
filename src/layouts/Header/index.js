@@ -56,17 +56,24 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: 'none',
       position: 'relative',
       paddingTop: '18px',
+      [theme.breakpoints.down('md')]: {
+        marginRight: theme.spacing(1),
+        marginLeft: theme.spacing(1),
+      },
 
-      '&.active' :{
+      '&.active': {
         content: '',
         borderWidth: '0 0 2px',
         borderStyle: 'solid',
         borderColor: '#0C40FC',
         color: '#0C40FC',
-      }
+      },
     },
     display: 'flex',
     marginLeft: '40px',
+    [theme.breakpoints.down('md')]: {
+      marginLeft: 18,
+    },
   },
   loginBtn: {
     marginRight: theme.spacing(1),
@@ -79,13 +86,13 @@ const useStyles = makeStyles((theme) => ({
     zIndex: theme.zIndex.drawer + 1,
   },
   desktopToolBar: {
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
     minHeight: '64px',
   },
   mobileToolBar: {
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('md')]: {
       display: 'none',
     },
     paddingRight: 0,
@@ -149,6 +156,11 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(1),
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: theme.spacing(1),
+      paddingRight: theme.spacing(1),
+      marginRight: 0,
+    },
   },
 }));
 
@@ -265,8 +277,12 @@ export const Header = () => {
         <Container style={{ padding: 0 }}>
           <Toolbar className={classes.desktopToolBar}>
             <img src={logoWithText} alt="" />
-            <Box className={classes.navLinkGroup} style={{padding: 0}}>
-              <NavLink activeClassName="active"  activeStyle={{color: 'red'}} to="/odds">
+            <Box className={classes.navLinkGroup} style={{ padding: 0 }}>
+              <NavLink
+                activeClassName="active"
+                activeStyle={{ color: 'red' }}
+                to="/odds"
+              >
                 Odds
               </NavLink>
               <NavLink activeClassName="active" to="/futures">
@@ -295,13 +311,21 @@ export const Header = () => {
             <Button className={classes.loginBtn} color="primary">
               Log In
             </Button>
-            <Button variant="contained" color="primary" style={{marginTop: "18px"}}>
+            <Button
+              variant="contained"
+              color="primary"
+              style={{ marginTop: '18px' }}
+            >
               Sign Up
             </Button>
           </Toolbar>
 
           <Toolbar className={classes.mobileToolBar}>
-            <img src={logoWithText} alt="" style={{width: '71px', height: '32px' }} />
+            <img
+              src={logoWithText}
+              alt=""
+              style={{ width: '71px', height: '32px' }}
+            />
             <IconButton
               color="inherit"
               aria-label="Open drawer"

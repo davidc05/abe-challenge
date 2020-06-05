@@ -11,13 +11,13 @@ const useStyles = makeStyles((theme) => ({
     cursor: 'pointer',
     width: '100%',
     maxWidth: 316,
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       marginBottom: theme.spacing(1),
     },
   },
   container: {
     height: 64,
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       border: '1px solid #F2F4F5',
       borderRadius: 4,
       height: 80,
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 16,
     letterSpacing: '0.02em',
     maxWidth: 150,
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       paddingLeft: theme.spacing(2),
     },
   },
@@ -62,13 +62,13 @@ export default ({ image, text, last }) => {
         <Grid item sm={4} md={4} className={classes.imageArea}>
           <img src={image} alt="" />
         </Grid>
-        <Hidden mdDown>
+        <Hidden smDown>
           <Grid item md={1} className={classes.arrowRight}>
             <ChevronRightIcon fontSize="small" color="primary" />
           </Grid>
         </Hidden>
       </Grid>
-      <Hidden mdDown>{!last && <Divider className={classes.divider} />}</Hidden>
+      <Hidden smDown>{!last && <Divider className={classes.divider} />}</Hidden>
     </div>
   );
 };

@@ -5,8 +5,10 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden';
 
 import Sidebar from './Sidebar';
+import MobileSidebar from './Sidebar/MobileSidebar';
 import ArticleWrapper from './ArticleWrapper';
 
 import getArticle from './Articles/articles';
@@ -21,6 +23,16 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(5),
     paddingBottom: theme.spacing(3),
     marginBottom: theme.spacing(3),
+    [theme.breakpoints.down('sm')]: {
+      paddingBottom: theme.spacing(2),
+      marginBottom: theme.spacing(2),
+      '& h1': {
+        fontSize: 28,
+      },
+      '& h6': {
+        fontSize: 16,
+      },
+    },
   },
   container: {
     paddingBottom: theme.spacing(5),
@@ -32,15 +44,16 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'white',
     paddingTop: theme.spacing(6),
     paddingBottom: theme.spacing(6),
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       paddingLeft: 0,
       paddingRight: 0,
     },
   },
   sidebar: {
-    [theme.breakpoints.down('md')]: {
-      display: 'none',
-    },
+    paddingLeft: theme.spacing(2),
+    // [theme.breakpoints.down('sm')]: {
+    //   display: 'none',
+    // },
   },
 }));
 
@@ -52,6 +65,9 @@ export default () => {
 
   return (
     <>
+      <Hidden mdUp>
+        <MobileSidebar />
+      </Hidden>
       <div className={classes.root}>
         <Box className={classes.pageTitle}>
           <Container>
@@ -74,9 +90,11 @@ export default () => {
             <Grid item sm={12} md={8}>
               <ArticleWrapper {...article} />
             </Grid>
-            <Grid item sm={12} md={4} className={classes.sidebar}>
-              <Sidebar />
-            </Grid>
+            <Hidden smDown>
+              <Grid item sm={12} md={4} className={classes.sidebar}>
+                <Sidebar />
+              </Grid>
+            </Hidden>
           </Grid>
         </Container>
       </div>

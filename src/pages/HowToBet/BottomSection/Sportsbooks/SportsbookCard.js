@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(5),
     marginBottom: theme.spacing(5),
     cursor: 'pointer',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       '& &': {
         marginLeft: 10,
       },

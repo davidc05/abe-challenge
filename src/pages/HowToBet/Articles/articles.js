@@ -33,13 +33,13 @@ export default ({ introSlug, blogSlug }) => {
       }
     } else {
       switch (introSlug) {
-        case 'betting-101':
+        case 'betting101':
           return {
             title: 'Betting 101',
             image: introImage2,
             content: <Betting101Article />,
           };
-        case 'advanced-betting':
+        case 'advanced':
         default:
           return {
             title: 'Advanced Betting Concepts',

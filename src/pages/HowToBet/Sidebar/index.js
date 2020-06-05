@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const betting101 = [
+export const betting101 = [
   { label: 'Sports Betting Explained', slug: 'sports-betting' },
   { label: 'Betting Odds Explained', slug: 'betting-odds' },
   { label: '5 Key Pieces of Sports Betting Advice', slug: 'key-pieces' },
@@ -48,7 +48,7 @@ const betting101 = [
   },
 ];
 
-const advancedBetting = [
+export const advancedBetting = [
   {
     label: 'Using Implied Probability to Find Sports Betting Value',
     slug: 'implied-probability',

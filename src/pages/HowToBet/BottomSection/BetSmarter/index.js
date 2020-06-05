@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 4,
     maxWidth: 344,
     marginLeft: 'auto',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       backgroundColor: '#F9FAFA',
       maxWidth: '100%',
       border: 'none',
@@ -58,7 +58,7 @@ export default () => {
   return (
     <div className={classes.root}>
       <Grid container className={classes.gridContainer}>
-        <Grid item sm={8} className={classes.inputArea}>
+        <Grid item xs={8} className={classes.inputArea}>
           <div className={classes.title}>
             <Typography variant="h3" color="primary">
               Bet Smarter
@@ -81,7 +81,7 @@ export default () => {
             </Button>
           </Box>
         </Grid>
-        <Grid item sm={4} className={classes.image}>
+        <Grid item xs={4} className={classes.image}>
           <img src={signupCard} alt="" />
         </Grid>
       </Grid>

@@ -11,7 +11,7 @@ import Slider from './Slider';
 const useStyles = makeStyles((theme) => ({
   root: {
     marginBottom: theme.spacing(6),
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       backgroundColor: '#F9FAFA',
       marginBottom: 0,
       paddingTop: theme.spacing(6),
@@ -20,8 +20,9 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     marginBottom: theme.spacing(4),
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       paddingLeft: theme.spacing(3),
+      fontSize: 24,
     },
   },
 }));
@@ -31,7 +32,7 @@ export default () => {
 
   return (
     <div className={classes.root}>
-      <Hidden mdDown>
+      <Hidden smDown>
         <Typography variant="h2" className={classes.title}>
           Insights
         </Typography>
@@ -41,7 +42,7 @@ export default () => {
           Latest Insights
         </Typography>
       </Hidden>
-      <Hidden mdDown>
+      <Hidden smDown>
         <Grid container>
           {data.map((item, idx) => (
             <InsightCard key={idx} {...item} />

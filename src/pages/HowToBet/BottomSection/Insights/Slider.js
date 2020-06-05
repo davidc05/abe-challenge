@@ -16,6 +16,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
+    width: '100%',
+    maxWidth: '100%',
   },
   sliderButton: {
     width: 22,
@@ -41,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     width: '95%',
+    maxWidth: '95%',
   },
 }));
 

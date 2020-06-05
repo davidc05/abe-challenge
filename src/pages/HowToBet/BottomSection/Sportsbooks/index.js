@@ -14,8 +14,9 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     marginBottom: theme.spacing(4),
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       paddingLeft: theme.spacing(3),
+      fontSize: 24,
     },
   },
 }));
@@ -25,7 +26,7 @@ export default () => {
 
   return (
     <div className={classes.root}>
-      <Hidden mdDown>
+      <Hidden smDown>
         <Typography variant="h2" className={classes.title}>
           Sportsbooks Reviews
         </Typography>
@@ -37,7 +38,7 @@ export default () => {
           Sportsbooks Reviews
         </Typography>
       </Hidden>
-      <Hidden mdDown>
+      <Hidden smDown>
         <Grid container>
           {data.map((item, idx) => (
             <SportsbookCard key={idx} {...item} />

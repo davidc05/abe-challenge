@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 4,
     maxWidth: 344,
     marginLeft: 'auto',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       maxWidth: '100%',
       border: 'none',
       paddingBottom: theme.spacing(5),
@@ -25,15 +25,17 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
     paddingBottom: theme.spacing(1),
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       paddingLeft: 0,
       paddingRight: 0,
     },
   },
   title: {
     marginBottom: theme.spacing(2),
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       paddingLeft: theme.spacing(3),
+      marginBottom: theme.spacing(3),
+      fontSize: 24,
     },
   },
 }));
@@ -44,7 +46,7 @@ export default () => {
   return (
     <div className={classes.root}>
       <div className={classes.content}>
-        <Hidden mdDown>
+        <Hidden smDown>
           <Typography variant="h3" className={classes.title}>
             Top Deals Today
           </Typography>
@@ -56,7 +58,7 @@ export default () => {
             in [New Jersey]
           </Typography>
         </Hidden>
-        <Hidden mdDown>
+        <Hidden smDown>
           <Grid container>
             {data.map((item, idx) => (
               <TopDealRow key={idx} last={idx === data.length - 1} {...item} />

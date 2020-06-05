@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'white',
     marginRight: theme.spacing(3),
     marginBottom: theme.spacing(3),
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       marginRight: 0,
       marginBottom: theme.spacing(1),
     },
